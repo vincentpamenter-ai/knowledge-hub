@@ -80,3 +80,32 @@ because the presence resolver queried a dead endpoint; Core status was permanent
 because the badge required a field the route never sent; Follow Work was aborted by an 8s proxy
 timeout below the measured 5-15.5s working duration. Published history now supersedes the Turn
 12 bundle as the latest off-machine copy.
+
+---
+
+# Update — Turn 14 (2026-11-09 01:45Z)
+
+| Field | Value |
+|---|---|
+| Source HEAD | `3cdc04421a0625751c27c80d4d34d789d7731fb5` |
+| Commits reachable | 693 |
+| Files in tree | 899 |
+| Bundle | `titan-turn14.bundle` (full `--all` bundle) |
+| SHA256 | `ebbe61c0300df6c3b07781d41558450cbcfe7cf295a31c852822928c3b37caa1` |
+
+Restore-verified by real clone: 693 commits, 899 files, `git fsck` reports 0 missing objects.
+All five Turn 13/14 offices fixes confirmed present in the restored tree.
+
+Turn 14 made the tower fix permanent and corrected the security framing. The Core endpoint
+validator now authorises by peer identity instead of by address class, lives in the maintained
+source with a parity test holding the bundled app identical to it, and reaches SHA parity with
+the installed application. The Tower also survived the app rewriting its own settings, which
+had broken it twice.
+
+Turn 14 also corrected a Turn 12 claim: the exposed Core (Cloud Control, tailnet-bound) enforces
+bearer auth on every data route. The unauthenticated service is the dev Core, bound to loopback
+and reachable only through an SSH tunnel. Neither is internet-reachable.
+
+Off-machine copy of the pokewealth source fix is on branch
+`titan/p0a-core-endpoint-authorisation-20261109` in the local pokewealth-gems repository; it is
+not yet pushed to that upstream and is preserved here as a bundle only if separately exported.
