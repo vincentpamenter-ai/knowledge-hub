@@ -41,3 +41,21 @@ patterns and for both live operator tokens before publication; none present.
 
 This is a recovery artifact, not a deployment. It does not claim the bundled code is installed
 on any host.
+
+---
+
+# Update — Turn 12 final state (2026-11-09 00:20Z)
+
+| Field | Value |
+|---|---|
+| Source HEAD | `8e904582ad2c42d512bee210b160beed1c064c14` |
+| Commits reachable | 687 |
+| Files in tree | 893 |
+| Bundle | `titan-turn12-final.bundle` |
+| SHA256 | `4aac0df16de95e3ec55086b52863e3393219e29d005efc092cec5941fe5b540c` |
+
+Restore-verified by real clone: 687 commits, 893 files, Turn 12 work intact
+(`src/lib/workforce/standingAuthority.ts` and the morning acceptance record both present).
+
+The earlier `titan-production-full.bundle` (`bcbf60f`) is retained as the Turn 11 point.
+This bundle supersedes it as the latest state.
